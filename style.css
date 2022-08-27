@@ -1,0 +1,61 @@
+/* Fonts from Google Fonts - more at https://fonts.google.com */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400,700");
+@import "site-plan.css";
+body {
+  background-color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  margin: 0 auto;
+  color: #444;
+  padding: 1em;
+}
+h1 {
+  font-family: "Merriweather", serif;
+  font-size: 32px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: inline;
+}
+div.content {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 100px 380px;
+  gap: 1px 1px;
+}
+h1.welcometext {
+  text-align: center;
+  color: red !important;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+img {
+  display: block;
+  max-width: 500px;
+  max-height: 376px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+div.picture{
+  width: 500px; /*any size*/
+  height: 376px; /*any size*/
+  grid-column-start: 3;
+  grid-column-end: 6;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: block;
+}
+div.maintext {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}

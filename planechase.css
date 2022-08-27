@@ -1,0 +1,55 @@
+@import "style.css";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400,700");
+
+div.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1px 1px;
+}
+
+form {
+  margin: 0 auto;
+  max-width: 400px;
+  border: 1px solid black;
+  border-radius: 1em;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+div.preview {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+div.subpreview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 30px, 500px, 500px;
+}
+
+div.button {
+  margin-left: auto;
+  margin-right: auto;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+img {
+  margin-left: auto;
+  margin-right: auto;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}

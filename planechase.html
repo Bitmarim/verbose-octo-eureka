@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Planechase</title>
+    <link type="text/css" rel="stylesheet" href="planechase.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="path">
+          <ul>
+            <!--This is the header. -->
+            <li><a href="index.html">Home</a></li>
+            <li><a href="whatgame.html">Choose Your Game</a></li>
+            <li><a href="planechase.html">Planechase</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="content">
+        <style>
+          a {
+            text-decoration: none;
+          }
+        </style>
+        <div class="select">
+          <form>
+            <div>
+              <input type="checkbox" checked="" />
+              <a id="0" onmouseover="preview(this)" href=""
+                >Academy at Tolaria West</a
+              >
+            </div>
+            <!--This is the form section for selecting planes for use in the planar deck They are checkboxes. -->
+          </form>
+          <!--<br /><br /><br /><br /><br /><br /><br /><br /><br />
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /> -->
+        </div>
+        <div class="preview">
+          <div class="planeImage">
+            <img
+              id="planeImage"
+              src="https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/2015-EvolvingWilds_5000x.jpg"
+            />
+          </div>
+          <div class="subpreview">
+            <div class="button">
+              <button type="button">Start Game</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      const planelist = [
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane1.jpeg?v=1644365143925",
+        "https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2Fillustration.svg?v=1618177344016",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/2015-EvolvingWilds_5000x.jpg?v=1644357786493",
+      ];
+
+      function preview(x) {
+      document.getElementById("planeImage").src = planelist[x.id];
+      }
+    </script>
+    <footer></footer>
+  </body>
+</html>
