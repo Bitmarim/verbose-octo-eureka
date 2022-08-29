@@ -13,8 +13,8 @@
           <ul>
             <!--This is the header. -->
             <li><a href="index.html">Home</a></li>
-            <li><a href="whatgame.html">Choose Your Game</a></li>
             <li><a href="planechase.html">Planechase</a></li>
+            <li><a href="archenemy.html">Archenemy</a></li>
           </ul>
         </div>
       </nav>
@@ -28,16 +28,40 @@
         </style>
         <div class="select">
           <form>
-            <div>
-              <input type="checkbox" checked="" />
-              <a id="0" onmouseover="preview(this)" href=""
-                >Academy at Tolaria West</a
-              >
-            </div>
-            <!--This is the form section for selecting planes for use in the planar deck They are checkboxes. -->
+            <!--This is the form section for selecting planes for use in the planar deck They are checkboxes.-->
+            <input type="checkbox" checked/>
+            <a id="0" onmouseover="preview(this)" href="">Academy at Tolaria West</a><br />
+            <input type="checkbox" checked/>
+            <a id="1" onmouseover="preview(this)" href="">Agyrem</a><br />
+            <input type="checkbox" checked/>
+            <a id="2" onmouseover="preview(this)" href="">Akoum</a><br />
+            <input type="checkbox" checked/>
+            <a id="3" onmouseover="preview(this)" href="">Aretopolis</a><br />
+            <input type="checkbox" checked/>
+            <a id="4" onmouseover="preview(this)" href="">Astral Arena</a><br />
+            <input type="checkbox" checked/>
+            <a id="5" onmouseover="preview(this)" href="">Bant</a><br />
+            <input type="checkbox" checked/>
+            <a id="6" onmouseover="preview(this)" href="">Bloodhill Bastion</a><br />
+            <input type="checkbox" checked/>
+            <a id="7" onmouseover="preview(this)" href="">Celestine Reef</a><br />
+            <input type="checkbox" checked/>
+            <a id="8" onmouseover="preview(this)" href="">Chaotic Æther</a><br />
+	          <input type="checkbox" checked/>
+            <a id="9" onmouseover="preview(this)" href="">Cliffside Market</a><br />
+            <input type="checkbox" checked/>
+            <a id="10" onmouseover="preview(this)" href="">Edge of Malacol</a><br />
+            <input type="checkbox" checked/>
+            <a id="11" onmouseover="preview(this)" href="">Eloren Wilds</a><br />
+            <input type="checkbox" checked/>
+            <a id="12" onmouseover="preview(this)" href="">Feeding Grounds</a><br />
+            <input type="checkbox" checked/>
+            <a id="13" onmouseover="preview(this)" href="">Fields of Summer</a><br />
+            <input type="checkbox" checked/>
+            <a id="14" onmouseover="preview(this)" href="">Furnace Layer</a><br />
           </form>
-          <!--<br /><br /><br /><br /><br /><br /><br /><br /><br />
-          <br /><br /><br /><br /><br /><br /><br /><br /><br /> -->
+          <br /><br /><br /><br /><br /><br /><br /><br /><br />
+          <br /><br /><br /><br /><br /><br /><br /><br /><br />
         </div>
         <div class="preview">
           <div class="planeImage">
@@ -48,7 +72,7 @@
           </div>
           <div class="subpreview">
             <div class="button">
-              <button type="button">Start Game</button>
+              <button onclick="shuffle()">Start Game</button>
             </div>
           </div>
         </div>
@@ -57,12 +81,33 @@
     <script>
       const planelist = [
         "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane1.jpeg?v=1644365143925",
-        "https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2Fillustration.svg?v=1618177344016",
-        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/2015-EvolvingWilds_5000x.jpg?v=1644357786493",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane2.jpeg?v=1661731459136",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane3.jpeg?v=1661731459068",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane4.jpeg?v=1661731458797",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane5.jpeg?v=1661731459670",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane6.jpeg?v=1661731459649",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane7.jpeg?v=1661731459768",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane8.jpeg?v=1661731459619",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane9.jpeg?v=1661731459333",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane10.jpeg?v=1661731459520",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane11.jpeg?v=1661731459859",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane12.jpeg?v=1661731459794",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane13.jpeg?v=1661731459437",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane14.jpeg?v=1661731458644",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane15.jpeg?v=1661731458750",
       ];
+      const planardeck = [];
 
       function preview(x) {
-      document.getElementById("planeImage").src = planelist[x.id];
+        document.getElementById("planeImage").src = planelist[x.id];
+      }
+      function shuffle() {
+        for (let i = 0; i < document.getElementsByTagName("input").length; i++) {
+          if (document.getElementsByTagName("input")[i].type == "checkbox" && document.getElementsByTagName("input")[i].checked == true) {
+            planardeck.push(planelist[i]);
+            console.log(planelist[i]); 
+          }
+          }
       }
     </script>
     <footer></footer>
