@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="viewport"
+      content="initial-scale=1,shrink-to-fit=no,width=device-width"
+    />
+  </head>
+  <style>
+    body {
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      max-height: 100vh;
+      min-height: 100vh;
+      max-width: 100vh;
+      min-width: 100vh;
+      flex-direction: column;
+    }
+  </style>
+  <body onload="startGame()">
+    <div>
+      <div class="card">
+        <img id="card" src="_blank" />
+      </div>
+    </div>
+  </body>
+  <script>
+    const get = sessionStorage.getItem("deck");
+    const deck = JSON.parse(get);
+    var img = document.getElementById("card");
+    img.addEventListener("click", moveCard, false);
+    var index = 0;
+    function startGame() {
+      document.getElementById("card").src = deck[0];
+    }
+    function moveCard(e) {
+      let middlehalf = window.innerWidth / 2;
+      var xPosition = e.clientX;
+      if (e.clientX > middlehalf) {
+        index = (index + 1) % deck.length;
+      } else {
+        index = (index - 1+ deck.length) % deck.length;
+      }
+
+      document.getElementById("card").src = deck[index];
+    }
+  </script>
+</html>
