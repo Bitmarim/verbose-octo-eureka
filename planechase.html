@@ -11,60 +11,76 @@
       <nav>
         <div class="path">
           <ul>
-            <!--This is the header. -->
-            <li><a href="index.html">Home</a></li>
+            <!--This is the header, used for navigation.-->
+            <li><a href="xindex.html">Home</a></li>
             <li><a href="planechase.html">Planechase</a></li>
-            <li><a href="archenemy.html">Archenemy</a></li>
+            <li><a href="xarchenemy.html">Archenemy</a></li>
           </ul>
         </div>
       </nav>
     </header>
     <main>
       <div class="content">
-        <style>
-          a {
-            text-decoration: none;
-          }
-        </style>
         <div class="select">
           <form>
-            <!--This is the form section for selecting planes for use in the planar deck They are checkboxes.-->
-            <input type="checkbox" checked/>
-            <a id="0" onmouseover="preview(this)" href="">Academy at Tolaria West</a><br />
-            <input type="checkbox" checked/>
+            <!--This is the form section for selecting planes for use in the planar deck They are checkboxes that by default are checked.-->
+            <input type="checkbox" checked />
+            <a id="0" onmouseover="preview(this)" href=""
+              >Academy at Tolaria West</a
+            ><br />
+            <input type="checkbox" checked />
             <a id="1" onmouseover="preview(this)" href="">Agyrem</a><br />
-            <input type="checkbox" checked/>
+            <input type="checkbox" checked />
             <a id="2" onmouseover="preview(this)" href="">Akoum</a><br />
-            <input type="checkbox" checked/>
+            <input type="checkbox" checked />
             <a id="3" onmouseover="preview(this)" href="">Aretopolis</a><br />
-            <input type="checkbox" checked/>
+            <input type="checkbox" checked />
             <a id="4" onmouseover="preview(this)" href="">Astral Arena</a><br />
-            <input type="checkbox" checked/>
+            <input type="checkbox" checked />
             <a id="5" onmouseover="preview(this)" href="">Bant</a><br />
-            <input type="checkbox" checked/>
-            <a id="6" onmouseover="preview(this)" href="">Bloodhill Bastion</a><br />
-            <input type="checkbox" checked/>
-            <a id="7" onmouseover="preview(this)" href="">Celestine Reef</a><br />
-            <input type="checkbox" checked/>
-            <a id="8" onmouseover="preview(this)" href="">Chaotic Æther</a><br />
-	          <input type="checkbox" checked/>
-            <a id="9" onmouseover="preview(this)" href="">Cliffside Market</a><br />
-            <input type="checkbox" checked/>
-            <a id="10" onmouseover="preview(this)" href="">Edge of Malacol</a><br />
-            <input type="checkbox" checked/>
-            <a id="11" onmouseover="preview(this)" href="">Eloren Wilds</a><br />
-            <input type="checkbox" checked/>
-            <a id="12" onmouseover="preview(this)" href="">Feeding Grounds</a><br />
-            <input type="checkbox" checked/>
-            <a id="13" onmouseover="preview(this)" href="">Fields of Summer</a><br />
-            <input type="checkbox" checked/>
-            <a id="14" onmouseover="preview(this)" href="">Furnace Layer</a><br />
+            <input type="checkbox" checked />
+            <a id="6" onmouseover="preview(this)" href="">Bloodhill Bastion</a
+            ><br />
+            <input type="checkbox" checked />
+            <a id="7" onmouseover="preview(this)" href="">Celestine Reef</a
+            ><br />
+            <input type="checkbox" checked />
+            <a id="8" onmouseover="preview(this)" href="">Chaotic Æther</a
+            ><br />
+            <input type="checkbox" checked />
+            <a id="9" onmouseover="preview(this)" href="">Cliffside Market</a
+            ><br />
+            <input type="checkbox" checked />
+            <a id="10" onmouseover="preview(this)" href="">Edge of Malacol</a
+            ><br />
+            <input type="checkbox" checked />
+            <a id="11" onmouseover="preview(this)" href="">Eloren Wilds</a
+            ><br />
+            <input type="checkbox" checked />
+            <a id="12" onmouseover="preview(this)" href="">Feeding Grounds</a
+            ><br />
+            <input type="checkbox" checked />
+            <a id="13" onmouseover="preview(this)" href="">Fields of Summer</a
+            ><br />
+            <input type="checkbox" checked />
+            <a id="14" onmouseover="preview(this)" href="">Furnace Layer</a
+            ><br />
+            <!--TODO: Finish placing the other ~71 Planechase cards.-->
+            <style>
+              /*This affects hyperlinks in the form section, removing the hyperlink underlines for the sake of aesthetic. These are mouseover-able text boxes, but not true and proper links. */
+              a {
+                text-decoration: none;
+              }
+            </style>
           </form>
           <br /><br /><br /><br /><br /><br /><br /><br /><br />
+          <!--Just a bunch of new lines to show preview div staying on screen. Will be replaced with the full plane checklist.-->
           <br /><br /><br /><br /><br /><br /><br /><br /><br />
         </div>
         <div class="preview">
+          <!--Holds the selected plane image, as well as the buttons.-->
           <div class="planeImage">
+            <!--TODO: Make planeImage start on backside of planar card, before being replaced with mouseover'd planes.-->
             <img
               id="planeImage"
               src="https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/2015-EvolvingWilds_5000x.jpg"
@@ -74,40 +90,62 @@
             <div class="button">
               <button onclick="shuffle()">Start Game</button>
             </div>
+            <!--TODO: Muffin button. Add buttons for preset decks based on individual Planechase releases.-->
           </div>
         </div>
       </div>
     </main>
     <script>
       const planelist = [
-        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane1.jpeg?v=1644365143925",
-        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane2.jpeg?v=1661731459136",
-        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane3.jpeg?v=1661731459068",
-        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane4.jpeg?v=1661731458797",
-        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane5.jpeg?v=1661731459670",
-        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane6.jpeg?v=1661731459649",
-        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane7.jpeg?v=1661731459768",
-        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane8.jpeg?v=1661731459619",
-        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane9.jpeg?v=1661731459333",
-        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane10.jpeg?v=1661731459520",
-        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane11.jpeg?v=1661731459859",
-        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane12.jpeg?v=1661731459794",
-        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane13.jpeg?v=1661731459437",
-        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane14.jpeg?v=1661731458644",
-        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane15.jpeg?v=1661731458750",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane0.jpeg?v=1644365143925",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane1.jpeg?v=1661731459136",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane2.jpeg?v=1661731459068",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane3.jpeg?v=1661731458797",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane4.jpeg?v=1661731459670",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane5.jpeg?v=1661731459649",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane6.jpeg?v=1661731459768",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane7.jpeg?v=1661731459619",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane8.jpeg?v=1661731459333",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane9.jpeg?v=1661731459520",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane10.jpeg?v=1661731459859",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane11.jpeg?v=1661731459794",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane12.jpeg?v=1661731459437",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane13.jpeg?v=1661731458644",
+        "https://cdn.glitch.global/e400d871-de98-4c90-9d2b-11200cd374d0/plane14.jpeg?v=1661731458750",
       ];
-      const planardeck = [];
-
       function preview(x) {
         document.getElementById("planeImage").src = planelist[x.id];
       }
+
       function shuffle() {
-        for (let i = 0; i < document.getElementsByTagName("input").length; i++) {
-          if (document.getElementsByTagName("input")[i].type == "checkbox" && document.getElementsByTagName("input")[i].checked == true) {
+        const planardeck = [];
+        for (
+          let i = 0;
+          i < document.getElementsByTagName("input").length;
+          i++
+        ) {
+          if (
+            document.getElementsByTagName("input")[i].type == "checkbox" &&
+            document.getElementsByTagName("input")[i].checked == true
+          ) {
             planardeck.push(planelist[i]);
-            console.log(planelist[i]); 
+            console.log(planelist[i]);
           }
-          }
+        }
+        const tmpdeck = [...planardeck];
+        const shuffdeck = [];
+        for (let i = 0; i < planardeck.length; i++) {
+          var j = Math.floor(Math.random() * tmpdeck.length);
+          shuffdeck.push(tmpdeck[j]);
+          tmpdeck.splice(j, 1);
+        }
+        console.log("amogus");
+        if (shuffdeck.length == 0) {
+          alert("You must have at least one plane selected!");
+        } else {
+          window.sessionStorage.setItem("deck", JSON.stringify(shuffdeck));
+          window.open("game_p.html");
+        }
       }
     </script>
     <footer></footer>
